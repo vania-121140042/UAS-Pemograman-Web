@@ -37,9 +37,7 @@ database atau yang ditambahkan melalui web sendiri.
 bagian code diatas untuk menampilkan data yang berada di database. Selain itu dibagain ini juga terdapat fitur update dan delete yang jika di klik 
 akan link ke halaman mengubah data dan menghapus data.
 
-<?php
 $conn = mysqli_connect("localhost", "root", "", "tugasminggu7");
-
 function query($query){
     global $conn;
     $result = mysqli_query($conn, $query);
@@ -47,15 +45,13 @@ function query($query){
     while($row = mysqli_fetch_assoc($result)){
         $rows[] = $row;
     }
-    return $rows;
-}
-?>
+    return $rows;}
+
 bagian code ini berfungsi untuk menghubungkan code yang dengan database yang telah kita buat sebelumnya. 
 $conn = $conn = mysqli_connect("localhost", "root", "", "tugasminggu7"); jika akan menghosting untuk username dan password perlu disesuaikan. 
 
-function tambahdata($data){
-   
-    global $conn;
+     function tambahdata($data){
+     global $conn;
      $nim = $data["nim"];
      $nama = $data["nama"];
      $kodeprodi = $data["kodeprodi"];
@@ -71,19 +67,16 @@ code ini berfungsi untuk menambahkan data yang diinput ke database -> $query = "
 lalu akan di tampilkan pada tabel melalui code ini -> mysqli_query($conn, $query);
 return mysqli_affected_rows($conn);
 
-function hapusdata($nim){
-
+    function hapusdata($nim){
     global $conn;
     mysqli_query($conn, "DELETE FROM mahasiswa WHERE nim = $nim");
-    return mysqli_affected_rows($conn);
-}
+    return mysqli_affected_rows($conn);}
+    
 bagian ini berfungsi untuk menghapus data yang telah di tampilkan atau di input user.
 code ini berfungsi untuk menghapus data yang berada pada database -> mysqli_query($conn, "DELETE FROM mahasiswa WHERE nim = $nim");
 
-//ubah data
-function ubahdata($data){
+    function ubahdata($data){
     global $conn;
-
     $nim = $data["nim"];
     $nama = $data["nama"];
     $kodeprodi = $data["kodeprodi"];
@@ -101,8 +94,8 @@ function ubahdata($data){
             
     mysqli_query($conn, $query);
 
-    return mysqli_affected_rows($conn);
-}
+    return mysqli_affected_rows($conn);}
+
 bagian ini berfungsi untuk menampilkan data yang sudah diinput sebelumnya, lalu akan diubah dengan menarik data 
 baru.
 code ini berfungsi untuk menambahkan data yang berada pada database ->  $query = "UPDATE mahasiswa SET
@@ -131,7 +124,7 @@ if(tambahdata($_POST)>0){
     ";
   }
 }
-?>
+
 bagian code ini berfungsi ketika tombol submit di klik maka dia akan memberikan nontifikasi 
 'data berhasil ditambahkan' jika berhasil ditambahkan dan akan memberikan nontifikasi 'data gagal ditambahkan' 
 jika tidak berhasil ditambahkan.
