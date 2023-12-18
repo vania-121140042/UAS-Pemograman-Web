@@ -6,19 +6,6 @@ nama : Vania Angelica Kusuma Putri Nababan
 nim  : 121140042
 
 kelas  : RA
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UAS Pemograman WEB</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>Daftar Mahasiswa Barnard College</h1>
-    <a href ="tambahdata.php" class="satu">Tambah Data </a>
     
     <div id="container">
     <table border="1" cellpadding="10" cellspacing="0">
@@ -50,10 +37,7 @@ database atau yang ditambahkan melalui web sendiri.
 bagian code diatas untuk menampilkan data yang berada di database. Selain itu dibagain ini juga terdapat fitur update dan delete yang jika di klik 
 akan link ke halaman mengubah data dan menghapus data.
 
-</body>
-</html>
 <?php
-//membuat koneksi dan querry
 $conn = mysqli_connect("localhost", "root", "", "tugasminggu7");
 
 function query($query){
@@ -65,7 +49,7 @@ function query($query){
     }
     return $rows;
 }
-
+?>
 bagian code ini berfungsi untuk menghubungkan code yang dengan database yang telah kita buat sebelumnya. 
 $conn = $conn = mysqli_connect("localhost", "root", "", "tugasminggu7"); jika akan menghosting untuk username dan password perlu disesuaikan. 
 
