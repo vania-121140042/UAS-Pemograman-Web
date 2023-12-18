@@ -54,37 +54,27 @@ bagian code ini berfungsi untuk menghubungkan code yang dengan database yang tel
 $conn = $conn = mysqli_connect("localhost", "root", "", "tugasminggu7"); jika akan menghosting untuk username dan password perlu disesuaikan. 
 
 function tambahdata($data){
-
+   
     global $conn;
-    
-    $nim = $data["nim"];
-    
-    $nama = $data["nama"];
-    
-    $kodeprodi = $data["kodeprodi"];
-    
-    $umur = $data["umur"];
-    
-    $status = $data["status"];
-    
-    $query = "INSERT INTO mahasiswa 
+     $nim = $data["nim"];
+     $nama = $data["nama"];
+     $kodeprodi = $data["kodeprodi"];
+     $umur = $data["umur"];
+     $status = $data["status"];
+     $query = "INSERT INTO mahasiswa 
               VALUES ('$nim', '$nama', '$kodeprodi', '$umur', '$status')";
-
     mysqli_query($conn, $query);
-
-    return mysqli_affected_rows($conn);
-}
+    return mysqli_affected_rows($conn);}
 
 bagian pada code ini berfungsi untuk mengambil data dari inputan user. 
 code ini berfungsi untuk menambahkan data yang diinput ke database -> $query = "INSERT INTO mahasiswa  VALUES ('$nim', '$nama', '$kodeprodi', '$umur', '$status')";
 lalu akan di tampilkan pada tabel melalui code ini -> mysqli_query($conn, $query);
 return mysqli_affected_rows($conn);
 
-
 function hapusdata($nim){
+
     global $conn;
     mysqli_query($conn, "DELETE FROM mahasiswa WHERE nim = $nim");
-
     return mysqli_affected_rows($conn);
 }
 bagian ini berfungsi untuk menghapus data yang telah di tampilkan atau di input user.
@@ -125,7 +115,7 @@ code ini berfungsi untuk menambahkan data yang berada pada database ->  $query =
             ";
 
 if(isset($_POST["submit"])){
-  if(tambahdata($_POST)>0){
+if(tambahdata($_POST)>0){
     echo"
         <script>
             alert('Data Berhasil Ditambahkan');
