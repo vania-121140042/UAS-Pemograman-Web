@@ -107,8 +107,10 @@ code ini berfungsi untuk menambahkan data yang berada pada database ->  $query =
             WHERE nim = $nim
             ";
 
+<?php
+require 'Lanjutan.php';
 if(isset($_POST["submit"])){
-if(tambahdata($_POST)>0){
+  if(tambahdata($_POST)>0){
     echo"
         <script>
             alert('Data Berhasil Ditambahkan');
@@ -124,6 +126,7 @@ if(tambahdata($_POST)>0){
     ";
   }
 }
+?>
 
 bagian code ini berfungsi ketika tombol submit di klik maka dia akan memberikan nontifikasi 
 'data berhasil ditambahkan' jika berhasil ditambahkan dan akan memberikan nontifikasi 'data gagal ditambahkan' 
