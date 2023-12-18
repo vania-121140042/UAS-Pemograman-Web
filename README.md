@@ -52,7 +52,6 @@ akan link ke halaman mengubah data dan menghapus data.
 
 </body>
 </html>
-
 <?php
 //membuat koneksi dan querry
 $conn = mysqli_connect("localhost", "root", "", "tugasminggu7");
@@ -66,10 +65,10 @@ function query($query){
     }
     return $rows;
 }
+
 bagian code ini berfungsi untuk menghubungkan code yang dengan database yang telah kita buat sebelumnya. 
 $conn = $conn = mysqli_connect("localhost", "root", "", "tugasminggu7"); jika akan menghosting untuk username dan password perlu disesuaikan. 
 
-//tambah data
 function tambahdata($data){
     global $conn;
     $nim = $data["nim"];
